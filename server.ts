@@ -16,6 +16,8 @@ app.use(fileUpload({
 }));
 const port = 8000;
 
+app.use('/user', require('./routes/user.routes'));
+
 app.get('/', (req: Request, res: Response) => {
     res.send('Express + TypeScript Server');
 });
