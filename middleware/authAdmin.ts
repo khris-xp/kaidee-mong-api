@@ -23,4 +23,4 @@ const authAdmin = async (req: AuthRequest, res: Response, next: NextFunction) =>
     }
 }
 
-module.exports = authAdmin;
+export default authAdmin;

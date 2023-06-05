@@ -1,7 +1,7 @@
 const categoryRouter = require('express').Router();
 const categoryController = require('../controller/category.controller');
 import authUser from '../middleware/auth';
-const authAdmin = require('../middleware/authAdmin');
+import authAdmin from '../middleware/authAdmin';
 
 categoryRouter.route('/category')
     .get(categoryController.getCategories)
