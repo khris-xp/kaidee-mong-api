@@ -6,7 +6,7 @@ interface AuthRequest extends Request {
     user?: IUser;
 }
 
-const auth = (req: AuthRequest, res: Response, next: NextFunction) => {
+const authUser = (req: AuthRequest, res: Response, next: NextFunction) => {
     try {
         const token = req.header("Authorization");
         if (!token) return res.status(400).json({ msg: "Invalid Authentication." });
@@ -22,4 +22,4 @@ const auth = (req: AuthRequest, res: Response, next: NextFunction) => {
     }
 }
 
-module.exports = auth;
+export default authUser;

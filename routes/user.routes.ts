@@ -1,11 +1,11 @@
-const router = require('express').Router();
+const userRouter = require('express').Router();
 const userController = require('../controller/user.controller');
-const auth = require('../middleware/auth');
+import authUser  from '../middleware/auth';
 
-router.post('/register', userController.register);
-router.get('/refresh_token', userController.refreshToken);
-router.post('/login', userController.login);
-router.post('/logout', userController.logout);
-router.get('/info', auth, userController.getUser);
+userRouter.post('/register', userController.register);
+userRouter.get('/refresh_token', userController.refreshToken);
+userRouter.post('/login', userController.login);
+userRouter.post('/logout', userController.logout);
+userRouter.get('/info', authUser, userController.getUser);
 
-module.exports = router;
+module.exports = userRouter;
