@@ -19,9 +19,10 @@ const port = 8000;
 app.use('/user', require('./routes/user.routes'));
 app.use('/api', require('./routes/category.routes'));
 app.use('/api', require('./routes/upload.routes'));
+app.use('/api', require('./routes/product.routes'));
 
 app.get('/', (req: Request, res: Response) => {
-    res.send('Express + TypeScript Server');
+    res.send('Welcome to KAIDEE MONG API');
 });
 
 app.listen(port, () => {
