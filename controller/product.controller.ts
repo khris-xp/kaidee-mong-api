@@ -25,7 +25,7 @@ const productController = {
             await newProduct.save();
 
             res.json({ msg: "Created a product" });
-            
+
         } catch (err: any) {
             return res.status(500).json({ msg: err.message });
         }
@@ -40,11 +40,11 @@ const productController = {
     },
     updateProduct: async (req: Request, res: Response) => {
         try {
-            const { title, price, description, content, images, category } = req.body;
+            const { product_id, title, price, description, content, images, category } = req.body;
             if (!images) return res.status(400).json({ msg: "No image upload" });
 
             await Products.findOneAndUpdate({ _id: req.params.id }, {
-                title: title.toLowerCase(), price, description, content, images, category
+                product_id, title: title.toLowerCase(), price, description, content, images, category
             });
 
             res.json({ msg: "Updated a Product" });
