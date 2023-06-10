@@ -20,6 +20,7 @@ app.use('/user', require('./routes/user.routes'));
 app.use('/api', require('./routes/category.routes'));
 app.use('/api', require('./routes/upload.routes'));
 app.use('/api', require('./routes/product.routes'));
+app.use('/api', require('./routes/content.routes'));
 
 app.get('/', (req: Request, res: Response) => {
     res.send('Welcome to KAIDEE MONG API');
